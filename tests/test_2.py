@@ -9,3 +9,7 @@ class TestYandexTranslator(unittest.TestCase):
 
     def test_request_code(self):
         self.assertEqual(ya_app.translate_it('hi')['code'], 200)
+
+
+if __name__ == '__main__':
+    unittest.main()
