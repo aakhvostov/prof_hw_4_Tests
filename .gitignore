@@ -1,4 +1,4 @@
 *.pdf
 *.mp4
-.config.py
+config.py
 /__pycache__
