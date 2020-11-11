@@ -13,9 +13,9 @@ def setUpModule():
     current_path = str(os.path.dirname(os.path.abspath(__file__)))
     path_directories = os.path.join(current_path, '../fixtures/directories.json')
     path_documents = os.path.join(current_path, '../fixtures/documents.json')
-    with open(path_directories, 'r', encoding='utf-8') as dir:
+    with open(path_directories, 'r') as dir:
         directories.update(json.load(dir))
-    with open(path_documents, 'r', encoding='utf-8') as doc:
+    with open(path_documents, 'r') as doc:
         documents.extend(json.load(doc))
 
 
@@ -44,7 +44,6 @@ class TestSecretaryProgram(unittest.TestCase):
         with patch('app.input', return_value='2207 876234'):
             shelf_number = app.get_doc_shelf()
             self.assertEqual(shelf_number, '1')
-
 
 
 if __name__ == '__main__':
